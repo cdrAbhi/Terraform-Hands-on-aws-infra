@@ -268,7 +268,7 @@ variable "file-container-status" {
     Your identification has been saved in ./id_rsa
     Your public key has been saved in ./id_rsa.pub
     The key fingerprint is:
-    SHA256:8CdVo44oVuPiN4AdAKt2sLTiYWpTqCzyF1s5YBcOvWo gaurav@learning-ocean
+    SHA256:8CdVo44oVuPiN4AdAKt2sLTiYWpTqCzyF1s5YBcOvWo root@abhi
     The key's randomart image is:
     +---[RSA 3072]----+
     |...  .      o    |
