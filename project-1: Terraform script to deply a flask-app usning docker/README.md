@@ -12,13 +12,15 @@ Install Terraform on your machine by following the official [Terraform installat
 ## Step 2: Write a Dockerfile for the Flask App
 
 ### Project Structure
-```
-flask_app/
-│
-├── templates/
-│   └── index.html
-├── app.py
-└── Dockerfile
+    ```
+    flask_app/
+    │
+    ├── templates/
+    │   └── index.html
+    ├── app.py
+    └── Dockerfile
+    ```
+    source github-link : https://github.com/cdrAbhi/flask-app
 ```
 
 ### Dockerfile
@@ -64,29 +66,29 @@ provider "aws" {
 Retrieve the necessary AWS data, such as the security group ID and AMI ID:
 
 ```hcl
-  data "aws_security_group" "sg-id" {
-    filter {
-      name   = "group-name"
-      values = [var.security_group_name]
-    }
+data "aws_security_group" "sg-id" {
+  filter {
+    name   = "group-name"
+    values = [var.security_group_name]
   }
-  
-  data "aws_ami" "ami_id" {
-    most_recent = true
-    owners      = [var.ami-owners]
-    filter {
-      name   = "name"
-      values = [var.ami-name]
-    }
-    filter {
-      name   = "virtualization-type"
-      values = [var.virtualization-type]
-    }
-    filter {
-      name   = "root-device-type"
-      values = [var.root-device-type]
-    }
+}
+
+data "aws_ami" "ami_id" {
+  most_recent = true
+  owners      = [var.ami-owners]
+  filter {
+    name   = "name"
+    values = [var.ami-name]
   }
+  filter {
+    name   = "virtualization-type"
+    values = [var.virtualization-type]
+  }
+  filter {
+    name   = "root-device-type"
+    values = [var.root-device-type]
+  }
+}
 ```
 
 ### Step 3.3: Write Script to Install Docker and Deploy Flask App
