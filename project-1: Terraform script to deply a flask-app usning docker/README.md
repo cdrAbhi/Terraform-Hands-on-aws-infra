@@ -305,9 +305,9 @@ resource "aws_key_pair" "my_key" {
 }
 ```
 
-## Step 5: Create Files to Store Docker Status
+## Step 5: Create Files to copy Docker Status from remote server
 
-Create two files on the remote server to store Docker status:
+Create two files on the local server to store Docker status:
 1. **`status.txt`:** Stores Docker status.
 2. **`c-status.txt`:** Stores Docker container list.
 
