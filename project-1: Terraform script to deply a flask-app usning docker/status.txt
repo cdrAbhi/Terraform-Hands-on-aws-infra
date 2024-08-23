@@ -1,0 +1,21 @@
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2024-08-23 08:41:55 UTC; 6s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 1930 (dockerd)
+      Tasks: 8
+     Memory: 33.0M (peak: 33.3M)
+        CPU: 276ms
+     CGroup: /system.slice/docker.service
+             └─1930 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Aug 23 08:41:55 ip-172-31-62-205 systemd[1]: Starting docker.service - Docker Application Container Engine...
+Aug 23 08:41:55 ip-172-31-62-205 dockerd[1930]: time="2024-08-23T08:41:55.362023796Z" level=info msg="Starting up"
+Aug 23 08:41:55 ip-172-31-62-205 dockerd[1930]: time="2024-08-23T08:41:55.364122335Z" level=info msg="detected 127.0.0.53 nameserver, assuming systemd-resolved, so using resolv.conf: /run/systemd/resolve/resolv.conf"
+Aug 23 08:41:55 ip-172-31-62-205 dockerd[1930]: time="2024-08-23T08:41:55.489786343Z" level=info msg="Loading containers: start."
+Aug 23 08:41:55 ip-172-31-62-205 dockerd[1930]: time="2024-08-23T08:41:55.786771573Z" level=info msg="Loading containers: done."
+Aug 23 08:41:55 ip-172-31-62-205 dockerd[1930]: time="2024-08-23T08:41:55.906174207Z" level=info msg="Docker daemon" commit=24.0.7-0ubuntu4.1 graphdriver=overlay2 version=24.0.7
+Aug 23 08:41:55 ip-172-31-62-205 dockerd[1930]: time="2024-08-23T08:41:55.906289098Z" level=info msg="Daemon has completed initialization"
+Aug 23 08:41:55 ip-172-31-62-205 dockerd[1930]: time="2024-08-23T08:41:55.976232371Z" level=info msg="API listen on /run/docker.sock"
+Aug 23 08:41:55 ip-172-31-62-205 systemd[1]: Started docker.service - Docker Application Container Engine.
