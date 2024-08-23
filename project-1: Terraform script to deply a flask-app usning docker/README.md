@@ -258,6 +258,29 @@ variable "file-container-status" {
 ```
 
 ## Step 4: Create `key.tf` to Manage SSH Key Pair
+    ┌──(root㉿abhi)-[~/terraform/project-1]
+    └─$ ssh-keygen -t rsa  
+    
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/home/kali/.ssh/id_rsa): ./id_rsa
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
+    Your identification has been saved in ./id_rsa
+    Your public key has been saved in ./id_rsa.pub
+    The key fingerprint is:
+    SHA256:8CdVo44oVuPiN4AdAKt2sLTiYWpTqCzyF1s5YBcOvWo gaurav@learning-ocean
+    The key's randomart image is:
+    +---[RSA 3072]----+
+    |...  .      o    |
+    | . .. o    o .   |
+    |.o  .o+o  o      |
+    |o =oo++= +       |
+    |oB.+*+o.S o      |
+    |O +oE++  o       |
+    |== ..+o.         |
+    |+.. o. .         |
+    |  ..             |
+    +----[SHA256]-----+
 
 ### Step 4.1: Generate SSH Key Pair on Your Machine
 
