@@ -1,0 +1,2 @@
+CONTAINER ID   IMAGE       COMMAND           CREATED        STATUS                  PORTS                                       NAMES
+c0d77c1807e1   flask-app   "python app.py"   1 second ago   Up Less than a second   0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   flask-web
