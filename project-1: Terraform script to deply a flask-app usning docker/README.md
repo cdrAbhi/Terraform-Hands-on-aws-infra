@@ -52,7 +52,7 @@ Install Terraform on your machine by following the official [Terraform installat
     ├── app.py
     └── Dockerfile
     ```
-    source github-link : https://github.com/cdrAbhi/flask-app
+    flask-app github-link : https://github.com/cdrAbhi/flask-app
 ```
 
 ### Dockerfile
