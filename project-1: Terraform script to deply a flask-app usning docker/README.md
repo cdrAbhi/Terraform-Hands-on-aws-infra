@@ -37,7 +37,13 @@ A fully automated deployment of your Flask application on AWS using Docker, mana
 
 This guide walks you through deploying a Flask application on an AWS EC2 instance using Docker for containerization and Terraform for infrastructure management.
 
-## Step 1: Install Terraform
+## Step 1: Install Terraform (execute below script or go to official site to install)
+    
+    #!/bin/bash
+    sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+    curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+    sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    sudo apt-get update && sudo apt-get install terraform
 
 Install Terraform on your machine by following the official [Terraform installation guide](https://learn.hashicorp.com/tutorials/terraform/install-cli).
 
