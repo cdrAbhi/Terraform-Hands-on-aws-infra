@@ -45,6 +45,13 @@ This guide walks you through deploying a Flask application on an AWS EC2 instanc
     sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
     sudo apt-get update && sudo apt-get install terraform
 
+    step-1 : write above script in a file sc.sh
+          vim sc.sh
+    step-2 : give exute execute permision to this file
+          chmod 400 sc.sh
+    step-3 : execute above script.
+          ./sc.sh
+
 Install Terraform on your machine by following the official [Terraform installation guide](https://learn.hashicorp.com/tutorials/terraform/install-cli).
 
 ## Step 2: Write a Dockerfile for the Flask App
