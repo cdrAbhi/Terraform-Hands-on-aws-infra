@@ -1,4 +1,36 @@
-Here's the same content formatted as Markdown code for your `README.md` file on GitHub:
+## Scenario: Deploying a Flask App on AWS with Docker and Terraform
+
+### Overview
+You're tasked with deploying a Flask web application on an AWS EC2 instance using Docker for containerization and Terraform for infrastructure management.
+
+### Steps
+
+1. **Set Up Flask App:**
+   - Create a simple Flask app.
+   - Write a Dockerfile to containerize the app.
+
+2. **Write Terraform Configs:**
+   - Use Terraform to provision an AWS EC2 instance, security group, and SSH key pair.
+   - Include a shell script to install Docker, clone the app from GitHub, and run it inside a Docker container.
+
+3. **Deploy:**
+   - Run Terraform to create the infrastructure and automatically set up Docker and the Flask app on the EC2 instance.
+
+4. **Verify:**
+   - Check that the Docker container is running and access the Flask app via the EC2 instance's public IP.
+
+### Outcome
+A fully automated deployment of your Flask application on AWS using Docker, managed with Terraform.
+
+### Concepts Learned
+
+1. **Terraform Basics:** Provisioning AWS resources using Terraform.
+2. **AWS EC2:** Managing EC2 instances, security groups, and SSH keys.
+3. **Docker:** Containerizing applications with Docker.
+4. **Automation:** Using Terraform and shell scripts for automated deployments.
+5. **Remote Execution:** Managing remote servers and running commands via Terraform.
+6. **Troubleshooting:** Debugging deployment and configuration issues.
+
 
 ```markdown
 # Deploy Flask App on AWS EC2 Using Docker and Terraform
@@ -262,5 +294,6 @@ These files will be generated and updated by the `scr-docker.sh` script as descr
 
 Following this guide will help you successfully deploy a Flask application on AWS EC2 using Docker, all managed with Terraform.
 ```
-
-This Markdown code will render nicely formatted content on your GitHub `README.md` file, making it easy for others to follow the guide.
+                                                                                    Thank you!♥
+                                                                                    ============
+                                                                                    Mentor : Shubham Londhe (Train with Shubahm)
