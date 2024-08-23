@@ -2,6 +2,8 @@ provider "aws" {
   region = var.region
 }
 
+#data soure technique to retrive data from aws cloud 
+
 data "aws_security_group" "sg-id" {
   filter {
     name   = "group-name"
@@ -27,6 +29,7 @@ data "aws_ami" "ami_id" {
   }
 }
 
+#aws_instance resource configuraiton
 resource "aws_instance" "inst" {
   ami                    = data.aws_ami.ami_id.id
   instance_type                   = var.instance_type
@@ -41,6 +44,8 @@ resource "aws_instance" "inst" {
     host = self.public_ip 
   }
 
+  #Let'see how to use file(copy script file from local to remote) and remote-exec(execute script) proviosners
+
   provisioner "file"{
     source = var.script-path-local #ur script-path to install and create docker image on ur local server
     destination = var.script-path-remote #destination on remote server
@@ -54,16 +59,16 @@ resource "aws_instance" "inst" {
     ]
   }
 
- 
+  #meaning : Before creating aws_instance resources first create aws_key_pair   .
   depends_on = [
     aws_key_pair.my_key  
   ]
 
 }
 
-
+#null_resource : provioner task execution is not depend on provisioner component changing like aws_instance.
 resource "null_resource" "script_update" {
-  depends_on = [aws_instance.inst]         #meaning : Before creating null_resources.script first create ec2 instace .
+  depends_on = [aws_instance.inst]         #meaning : Before creating null_resources first create ec2 instace .
  
   connection {
     type = var.c-type #Connection type
@@ -79,13 +84,14 @@ resource "null_resource" "script_update" {
 
   # use to run multiple command 
   provisioner "local-exec" {
+    #using this command to run more than one command at once 
     command = <<EOT
         scp -o StrictHostKeyChecking=no -i id_rsa ubuntu@${aws_instance.inst.public_ip}:/home/ubuntu/${var.file-docker-status} ${var.file-docker-status}  &&
         scp -o StrictHostKeyChecking=no -i id_rsa ubuntu@${aws_instance.inst.public_ip}:/home/ubuntu/${var.file-container-status} ${var.file-container-status}
       EOT
 }
 
-
+  #alwas_run ==> always run whenever timestamp() reutrun diff value of time
   triggers = {
     always_run = "${timestamp()}"          
   }
